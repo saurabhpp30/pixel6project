@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { Allroutes } from './Routes/Allroutes';
+import { useState ,useEffect} from 'react';
+
+
+import {Header} from './Components/index'
+
 function App() {
+  const [upDate,setUpdate] = useState({})
+  const [performTask,setTaskperform] = useState(JSON.parse(localStorage.getItem("customers"))||[])
+  useEffect(()=>{
+    localStorage.setItem("customers",JSON.stringify(performTask));
+    
+  },[performTask])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header/>
+     <Allroutes performTask={performTask} setTaskperform={setTaskperform} upDate = {upDate} setUpdate={setUpdate} />
     </div>
   );
 }
