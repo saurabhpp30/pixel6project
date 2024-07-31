@@ -2,7 +2,7 @@ header{
   max-height: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 15px;
   margin-bottom: 40px;
   margin-left: 30px;
@@ -21,8 +21,7 @@ header .logo{
   text-decoration: none;
 }
 header .logo img{
-  /* box-shadow: var(--box-shadow); */
-  border: 0px;
+    border: 0px;
   max-width: 50px;
   cursor: pointer;
 }
@@ -54,5 +53,24 @@ header .List ul{
 header div span {
   color: #525252;
   font-size: 20px;
+}
+
+@media (max-width: 500px) {
+  header {
+    flex-direction: row; 
+    justify-content: space-between; 
+    padding: 10px 15px;
+  }
+
+  header .List ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header .navlink {
+    padding: 5px 10px; 
+    font-size: 16px; 
+    margin: 0 5px; 
+  }
 }
 
