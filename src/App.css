@@ -56,3 +56,26 @@ header div span {
   font-size: 20px;
 }
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px; 
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header .List ul {
+    flex-direction: column;
+    width: 100%; 
+  }
+
+  header .navlink {
+    padding: 10px 0; 
+    font-size: 18px;
+    width: 100%; 
+    text-align: left; 
+  }
+}
