@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { Addtolist, UpdateList } from '../store/createActions'
 
-export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
+export function Customer({ upDate, setUpdate }) {
   const [pan, setpan] = useState("")
   const [name, setname] = useState("")
   const [errpan, seterrpan] = useState(false)
@@ -12,9 +12,6 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
   const [add2, setadd2] = useState("")
   const UpPan = async (e) => {
     const panno = e.target.value
-    console.log(panno)
-
-
     let objpan = {
       panNumber: `${panno}`
     }
@@ -261,7 +258,6 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
             setadd2("")
           } else {
             setadderr(true)
-
           }
         } else {
           if (add1) {
@@ -296,7 +292,6 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
   }
   const Handledelete = (id) => {
     if (upDate.sucess) {
-
       setUpdate({ ...upDate, add: upDate.add.filter((value) => (id !== value.id)) })
     } else {
       const newadd = add.filter((field) => (id !== field.id))
@@ -306,21 +301,21 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
   const dispatch = useDispatch()
   const [uperr, setuperr] = useState(false)
   const [ader, setader] = useState(false)
-  const [cre,setcre] = useState("")
+  const [cre, setcre] = useState("")
   const clearcre = () => {
     setcre("");
   };
   useEffect(() => {
-      const handleMouseMove = () => {
+    const handleMouseMove = () => {
       clearcre();
-     };
+    };
     if (cre) {
-          document.addEventListener("mousemove", handleMouseMove);
-          return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-          };
-        }
-      }, [cre]); 
+      document.addEventListener("mousemove", handleMouseMove);
+      return () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
+  }, [cre]);
   const Mainsubmit = (e) => {
     e.preventDefault()
     if (update.id) {
@@ -337,19 +332,16 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
             setader(false)
           }
         } else {
-
           setader(false)
           const custarr = { ...upDate }
-
-          const editTask = performTask.map((todo) => (
-            todo.id === upDate.id ? custarr : todo
-          ))
-          setTaskperform(editTask)
           setcre("customer updated sucessfully")
           dispatch(UpdateList(custarr))
-
-
           setUpdate({})
+          setadd1("")
+          setadd2("")
+          setpin("")
+          setcity("")
+          setstate("")
           console.log()
           seterrmob(false)
           setadderr(false)
@@ -372,35 +364,25 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
             email: mail,
             add: add,
           }
-          setTaskperform([...performTask, custarr])
+          console.log("hello saurabh")
           dispatch(Addtolist(custarr))
           setcre("customer created sucessfully")
-
           setmail("")
           setpan("")
           setmob("")
           setname("")
+          setadd1("")
+          setadd2("")
+          setpin("")
+          setcity("")
+          setstate("")
           setadd([])
           seterrmob(false)
           setadderr(false)
         }
       }
     }
-    // const clearcre = () => {
-    //   setcre("");
-    // };
-  
-    // useEffect(() => {
-    //   const handleMouseMove = () => {
-    //     clearcre();
-    //   };
-    //     if (cre) {
-    //     document.addEventListener("mousemove", handleMouseMove);
-    //           return () => {
-    //       document.removeEventListener("mousemove", handleMouseMove);
-    //     };
-    //   }
-    // }, [cre]); 
+
   }
   return (
     <section className="flex flex-col items-center pt-6">
@@ -572,10 +554,10 @@ export function Customer({ upDate, setUpdate, performTask, setTaskperform }) {
               {adderr && <p className="text-red-500 text-xs italic">Cannot add more than 10 addresses</p>}
             </button>
             {cre && (
-      <p className="text-green-500 text-xs italic">
-        {cre}
-        </p>
-    )}
+              <p className="text-green-500 text-xs italic">
+                {cre}
+              </p>
+            )}
           </form>
         </div>
       </div>

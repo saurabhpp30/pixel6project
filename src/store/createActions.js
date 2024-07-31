@@ -1,8 +1,10 @@
+
 import { ADD_TO_LIST, REMOVE_LIST,UPDATE_LIST } from "./actionTypes";
 
+
 export const Addtolist = (custarr) => {
-    console.log(`hello gorilla`,custarr)
-    return {
+    console.log("hello gorilla")
+  return {
         type: ADD_TO_LIST,
         payload: custarr
     }
