@@ -386,12 +386,12 @@ export function Customer({ upDate, setUpdate }) {
   }
   return (
     <section className="flex flex-col items-center pt-6">
-      <div className="w-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 md:mt-0 sm:max-w-md xl:p-0">
-        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+      <div className="w-full bg-white rounded-lg shadow-md sm:max-w-md xl:p-0">
+        <div className="p-6 space-y-4 sm:p-8">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
             {upDate.sucess ? 'Update Customer' : 'Create Customer'}
           </h1>
-          <form onSubmit={Mainsubmit} className="space-y-4 md:space-y-6">
+          <form onSubmit={Mainsubmit} className="space-y-4">
             <div>
               <label htmlFor="pan" className="block text-gray-700">Pan No</label>
               <input
@@ -402,7 +402,7 @@ export function Customer({ upDate, setUpdate }) {
                 onChange={upDate.sucess ? UpPan : HandlePan}
                 maxLength={10}
                 required
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
               {errpan && <p className="text-red-500 text-xs italic">Please enter a valid PAN</p>}
             </div>
@@ -415,13 +415,13 @@ export function Customer({ upDate, setUpdate }) {
                 value={upDate.sucess ? upDate.name : name}
                 maxLength={140}
                 required
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
             </div>
             <div>
               <label htmlFor="phone" className="block text-gray-700">Phone Number</label>
-              <div className="flex items-center border border-gray-300 rounded-md dark:border-gray-600 bg-gray-50">
-                <span className="px-3 py-2 bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-white">+91</span>
+              <div className="flex items-center border border-gray-300 rounded-md bg-gray-50">
+                <span className="px-3 py-2 bg-gray-200 text-gray-700">+91</span>
                 <input
                   type="text"
                   name="phone"
@@ -430,7 +430,7 @@ export function Customer({ upDate, setUpdate }) {
                   onChange={HandleMob}
                   maxLength={10}
                   required
-                  className="w-full bg-transparent border-none rounded-r-md p-2.5 text-gray-900 dark:text-white focus:ring-blue-600 focus:border-blue-600"
+                  className="w-full bg-transparent border-none rounded-r-md p-2.5 text-gray-900 focus:ring-blue-600 focus:border-blue-600"
                 />
               </div>
               {errmob && <p className="text-red-500 text-xs italic">Please enter a valid Mobile Number</p>}
@@ -445,7 +445,7 @@ export function Customer({ upDate, setUpdate }) {
                 onChange={Handlemail}
                 maxLength={255}
                 required
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
               {erremail && <p className="text-red-500 text-xs italic">Please enter a valid email</p>}
             </div>
@@ -457,7 +457,7 @@ export function Customer({ upDate, setUpdate }) {
                 id="address1"
                 value={add1}
                 onChange={(e) => { setadd1(e.target.value); seterradd1(false); }}
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
               {erradd1 && <p className="text-red-500 text-xs italic">Address line 1 cannot be empty</p>}
             </div>
@@ -469,7 +469,7 @@ export function Customer({ upDate, setUpdate }) {
                 id="address2"
                 value={add2}
                 onChange={(e) => setadd2(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
             </div>
             <div>
@@ -481,7 +481,7 @@ export function Customer({ upDate, setUpdate }) {
                 value={pin}
                 onChange={Handlepin}
                 maxLength={6}
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
               {errpin && <p className="text-red-500 text-xs italic">Please enter a valid PIN</p>}
               {errcode && <p className="text-red-500 text-xs italic">Postal code cannot be empty</p>}
@@ -493,7 +493,7 @@ export function Customer({ upDate, setUpdate }) {
                 name="city"
                 id="city"
                 value={city}
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
             </div>
             <div>
@@ -503,13 +503,13 @@ export function Customer({ upDate, setUpdate }) {
                 name="state"
                 id="state"
                 value={state}
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-gray-900 sm:text-sm focus:ring-blue-600 focus:border-blue-600"
               />
             </div>
             <button
               type="button"
               onClick={Addaddress}
-              className="w-auto bg-gray-900 text-white rounded-lg py-1 px-3 text-xs font-bold uppercase shadow-md transition hover:shadow-lg dark:bg-gray-800"
+              className="w-auto bg-gray-900 text-white rounded-lg py-1 px-3 text-xs font-bold uppercase shadow-md transition hover:shadow-lg"
             >
               {update.id ? "UPDATE" : "ADD"}
             </button>
@@ -530,14 +530,14 @@ export function Customer({ upDate, setUpdate }) {
                       <button
                         type="button"
                         onClick={() => Handledit(addr.id)}
-                        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500"
+                        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                       >
                         Edit
                       </button>
                       <button
                         type="button"
                         onClick={() => Handledelete(addr.id)}
-                        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-500"
+                        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                       >
                         Delete
                       </button>
@@ -548,10 +548,9 @@ export function Customer({ upDate, setUpdate }) {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white rounded-lg py-2 px-4 text-sm font-medium shadow-md transition hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
+              className="w-full bg-blue-600 text-white rounded-lg py-2 px-4 text-sm font-medium shadow-md transition hover:bg-blue-700"
             >
               {upDate.sucess ? "Update Customer" : "Create  Customer"}
-              {adderr && <p className="text-red-500 text-xs italic">Cannot add more than 10 addresses</p>}
             </button>
             {cre && (
               <p className="text-green-500 text-xs italic">
